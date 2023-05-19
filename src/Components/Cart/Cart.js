@@ -1,13 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import classes from './Cart.module.css';
 import Modal from '../UI/Modal';
 import CartContext from '../../Store/cart-context';
 import CartItem from './CartItem';
 
 const Cart = (props) => {
+    const [ordered, setOrdered] = useState(false);
     const cartCtx = useContext(CartContext);
-    console.log(cartCtx.items, cartCtx.totalAmount);
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+    console.log(totalAmount);
     const hasItems = cartCtx.items.length > 0;
     const cartItemRemoveHandler = (id) => {
         cartCtx.removeItem(id);
@@ -15,6 +16,11 @@ const Cart = (props) => {
 
     const cartItemAddHandler = (item) => {
         cartCtx.addItem({...item, amount: 1});
+    }
+
+    const orderHandler = () => {
+        setOrdered(true);
+        cartCtx.clearCart();
     }
 
     const cartItems = (
@@ -34,15 +40,19 @@ const Cart = (props) => {
 
     return (
         <Modal onHideCart={props.onHideCart}>
-            {cartItems}
-            <div className={classes.total}>
-                <span>Total Price</span>
-                <span>{totalAmount}</span>
-            </div>
-            <div className={classes.actions}>
-                <button className={classes['button--alt']} onClick={props.onHideCart}>Close</button>
-                {hasItems && <button className={classes.button}>Order</button>}
-            </div>
+            {!ordered && 
+                <div>
+                    {cartItems}
+                    <div className={classes.total}>
+                        <span>Total Price</span>
+                        <span>{totalAmount}</span>
+                    </div>
+                    <div className={classes.actions}>
+                        <button className={classes['button--alt']} onClick={props.onHideCart}>Close</button>
+                        {hasItems && <button className={classes.button} onClick={orderHandler}>Order</button>}
+                    </div>
+                </div>}
+            {ordered && <center><p>Thank you! Your ordered has been placed.</p></center>}
         </Modal>
   )
 }

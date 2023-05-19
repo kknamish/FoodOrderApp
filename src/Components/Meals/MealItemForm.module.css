@@ -1,5 +1,6 @@
 .form {
     text-align: right;
+    margin: 1rem 1rem;
   }
   
   .form button {
@@ -8,9 +9,12 @@
     background-color: #ffffff;
     border: 1px solid #000000;
     color: rgb(0, 0, 0);
-    padding: 0.25rem 2rem;
+    padding: 0.5rem 2rem;
     border-radius: 25px;
     font-weight: bold;
+    text-align: center;
+    margin-left: 1rem;
+    margin: 0.25rem
   }
   
   .form button:hover,
@@ -19,3 +23,49 @@
     background-color: #000000;
     border-color: #ffffff;
   }
+
+  .actions {
+    text-align: right;
+  }
+  
+  .actions button {
+    font: inherit;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #000000;
+    padding: 0.3rem 0.50rem;
+    border-radius: 25px;
+    margin: 0rem 0.25rem;
+  }
+  
+  .actions button:hover,
+  .actions button:active {
+    background-color: #000000;
+    border-color: #ffffff;
+    color: rgb(255, 255, 255);
+  }
+  
+  .actions .button--alt {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .actions .button {
+    background-color: #000000;
+    color: white;
+  }
+
+  .amount {
+    font-weight: normal;
+    border: 1px solid #000000;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    color: #2e2e2e;
+    background-color: rgb(255, 255, 255)
+  }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
