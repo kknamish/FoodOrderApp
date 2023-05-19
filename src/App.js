@@ -3,6 +3,7 @@ import Meals from './Components/Meals/Meals';
 import Cart from './Components/Cart/Cart';
 import { useState } from 'react';
 import CartProvider from './Store/CartProvider';
+import Footer from './Components/UI/Footer';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -22,6 +23,7 @@ function App() {
       <main>
         <Meals />
       </main>
+      <Footer />
     </CartProvider>
   );
 }

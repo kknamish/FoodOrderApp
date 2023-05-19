@@ -16,13 +16,12 @@ const MealItem = (props) => {
       })
     }
 
-    const itemTo = cartCtx.items.filter((item)=>{
+    const targetItem = cartCtx.items.filter((item)=>{
       return item.id === props.id;
     })
-    console.log(itemTo, props.id);
     let itemAmount = 0;
-    if(itemTo[0]){
-      itemAmount = itemTo[0].amount;
+    if(targetItem[0]){
+      itemAmount = targetItem[0].amount;
     }
 
     const removeFromCartHandler = () => {
