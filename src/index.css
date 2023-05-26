@@ -20,6 +20,11 @@ footer {
   margin-block-end: 2.33em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 ::-webkit-scrollbar {
