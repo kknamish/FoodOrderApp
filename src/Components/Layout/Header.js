@@ -9,8 +9,10 @@ const Header = (props) => {
     <>
       <header className={classes.header}>
         <h1>React Eats.</h1>
-        <HeaderOrdersButton onClick={props.onShowOrders}/>
-        <HeaderCartButton onClick={props.onShowCart} />
+        <div className={classes.buttons}>
+          <HeaderOrdersButton onClick={props.onShowOrders} />
+          <HeaderCartButton onClick={props.onShowCart} />
+        </div>
       </header>
       <div className={classes['main-image']}>
         <img src={MealsImage} alt='Logo'/>  

@@ -12,6 +12,7 @@
     font-weight: bold;
     min-width: 50px; 
     max-width: 300px;
+    float: right;
   }
   
   .button:hover,
