@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from './UI/Modal';
+import Modal from '../Components/UI/Modal';
 import useFetch from '../Hooks/use-fetch';
 import OrderItem from './OrderItem';
 import classes from './Orders.module.css';

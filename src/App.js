@@ -4,7 +4,7 @@ import Cart from './Components/Cart/Cart';
 import { useState } from 'react';
 import CartProvider from './Store/CartProvider';
 import Footer from './Components/UI/Footer';
-import Orders from './Components/Orders';
+import Orders from './Orders/Orders';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
