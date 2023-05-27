@@ -7,7 +7,9 @@
   }
 
 .order-id {
+    color: #838383;
     margin-bottom: 8px;
+    font-weight: 500;
 }
 
 .name {

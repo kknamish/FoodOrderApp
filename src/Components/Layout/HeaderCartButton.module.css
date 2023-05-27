@@ -4,7 +4,7 @@
     border: none;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    padding: 0.75rem 3rem;
+    padding: 0.75rem 2rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -13,6 +13,7 @@
     min-width: 50px; 
     max-width: 300px;
     float: right;
+    margin-left: 15px;
   }
   
   .button:hover,
