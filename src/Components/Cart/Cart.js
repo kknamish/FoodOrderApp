@@ -75,7 +75,7 @@ const Cart = (props) => {
                 </div>
             }
             {isCheckout && !ordered && !isSubmitting && <Checkout onOrder={orderHandler} onBack={backHandler}/>}
-            {isSubmitting && <center><p>Placing order...</p></center>}
+            {isSubmitting && <center><p>Submitting order details...</p></center>}
             {ordered && <center><p>Thank you! Your ordered has been placed.</p></center>}
         </Modal>
   )
