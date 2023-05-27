@@ -67,49 +67,48 @@ const Checkout = ( props ) => {
   return (
     <form className={classes.form} onSubmit={orderHandler}>
         <div className={`${classes.control} ${isFormDetailsValid.name? '': classes.invalid}`}>
-            <label htmlFor='name'>Full Name</label>
+            <label htmlFor='name'>Full Name{!isFormDetailsValid.name && <span className={classes['error-text']}><small>(*Please enter Min. 4 characters.)</small></span>}</label>
             <input 
                 id='name' 
                 name='name'
                 ref={inputNameRef}
             />
-            {!isFormDetailsValid.name && <p className={classes['error-text']}>*Please enter a Valid Full Name(Min. 4 characters).</p>}
+            {/* {!isFormDetailsValid.name && <p className={classes['error-text']}>*Please enter a Valid Full Name(Min. 4 characters).</p>} */}
         </div>
         <div className={`${classes.control} ${isFormDetailsValid.street? '': classes.invalid}`}>
-            <label htmlFor='street'>Street</label>
+            <label htmlFor='street'>Street{!isFormDetailsValid.street && <span className={classes['error-text']}><small>(*Please enter Min. 10 characters.)</small></span>}</label>
             <input 
                 id='street' 
                 name='street' 
                 ref={inputStreetRef}
             />
-            {!isFormDetailsValid.street && <p className={classes['error-text']}>*Please enter a Valid Street(Min. 10 characters).</p>}
+            {/* {!isFormDetailsValid.street && <small className={classes['error-text']}>*Please enter a Valid Street(Min. 10 characters).</small>} */}
         </div>
         <div className={`${classes.control} ${isFormDetailsValid.city? '': classes.invalid}`}>
-            <label htmlFor='city'>City</label>
+            <label htmlFor='city'>City{!isFormDetailsValid.city && <small className={classes['error-text']}>(*Please enter Min. 4 characters.)</small>}</label>
             <input 
                 id='city' 
                 name='city' 
                 ref={inputCityRef}
             />
-            {!isFormDetailsValid.city && <p className={classes['error-text']}>*Please enter a Valid City(Min. 4 characters).</p>}
+            {/* {!isFormDetailsValid.city && <p className={classes['error-text']}>*Please enter a Valid City(Min. 4 characters).</p>} */}
         </div>
         <div className={`${classes.control} ${isFormDetailsValid.pin? '': classes.invalid}`}>
-            <label htmlFor='pin'>Postal Code</label>
+            <label htmlFor='pin'>Postal Code{!isFormDetailsValid.pin && <small className={classes['error-text']}>(*Please enter a Valid 5 digit Postal Code.)</small>} </label>
             <input 
                 id='pin' 
                 name='pin' 
                 ref={inputPinRef}
             />
-            {!isFormDetailsValid.pin && <p className={classes['error-text']}>*Please enter a Valid 5 digit Postal Code.</p>}
+            {/* {!isFormDetailsValid.pin && <p className={classes['error-text']}>*Please enter a Valid 5 digit Postal Code.</p>} */}
         </div>
         <div className={`${classes.control} ${isFormDetailsValid.phone? '': classes.invalid}`}>
-            <label htmlFor='phone'>Contact</label>
+            <label htmlFor='phone'>Contact{!isFormDetailsValid.phone && <small className={classes['error-text']}>(*Please enter a Valid 10 digit Contact.)</small>} </label>
             <input 
                 id='phone' 
                 name='phone'
                 ref={inputPhoneRef}
             />
-            {!isFormDetailsValid.phone && <p className={classes['error-text']}>*Please enter a Valid 10 digit Contact.</p>}
         </div>
         <div className={classes.actions}>
             <button className={classes['button--alt']} type='button' onClick={props.onBack}>{'<< '}Back</button>
