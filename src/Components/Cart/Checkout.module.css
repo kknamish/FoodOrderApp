@@ -1,0 +1,68 @@
+.form {
+    margin: 1rem 0;
+    height: 25rem;
+    overflow: auto;
+  }
+  
+  .control {
+    margin-bottom: 1rem;
+    padding: 0px 20px;
+  }
+  
+  .control label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    display: block;
+    padding: 0px 5px;
+  }
+  
+  .control input {
+    font: inherit;
+    border: 1px solid #bebebe;
+    border-radius: 30px;
+    width: 30rem;
+    height: 2rem;
+    max-width: 100%;
+    padding: 15px;
+  }
+  
+  .actions {
+    text-align: right;
+  }
+  
+  .actions button {
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #000000;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+  }
+  
+  .actions button:hover,
+  .actions button:active {
+    background-color: #ffffff;
+    border-color: #000000;
+    color: rgb(0, 0, 0);
+  }
+  
+  .actions .button--alt {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .actions .button {
+    background-color: #000000;
+    color: white;
+  }
+  
+  .invalid input {
+    border-color: rgb(255, 56, 56);
+    background-color: #ffd4d9;
+  }
+
+  .error-text {
+    margin-top: 0px;
+    padding: 0px 5px;
+  }
