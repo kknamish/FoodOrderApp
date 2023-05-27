@@ -1,0 +1,39 @@
+.orders-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 25rem;
+    overflow: scroll;
+    top: 17vh;
+  }
+
+.actions {
+text-align: right;
+}
+
+.actions button {
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #000000;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+  }
+
+.actions button:hover,
+.actions button:active {
+background-color: #ffffff;
+border-color: #000000;
+color: rgb(0, 0, 0);
+}
+
+.actions .button--alt {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+.actions .button {
+background-color: #000000;
+color: white;
+}

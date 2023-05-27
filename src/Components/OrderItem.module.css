@@ -1,0 +1,52 @@
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 0rem 1rem 0rem;
+    margin-top: 0;
+  }
+
+.order-id {
+    margin-bottom: 8px;
+}
+
+.name {
+    margin: 0.5rem 0rem;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid #dadada;
+    border-bottom: 2px solid #000000
+  }
+
+  .order-item h2 {
+    margin: 0 0 0.5rem 0;
+    color: #363636;
+  }
+
+  .summary {
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .price {
+    font-weight: bold;
+    color: #6b6b6b;
+  }
+
+  .amount {
+    font-weight: bold;
+    border: 1px solid #ccc;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    color: #363636;
+  } 

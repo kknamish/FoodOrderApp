@@ -4,9 +4,11 @@ import Cart from './Components/Cart/Cart';
 import { useState } from 'react';
 import CartProvider from './Store/CartProvider';
 import Footer from './Components/UI/Footer';
+import Orders from './Components/Orders';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
+  const [ordersIsShown, setOrdersIsShown] = useState(false);
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -16,10 +18,19 @@ function App() {
     setCartIsShown(false);
   }
 
+  const showOrdersHandler = () => {
+    setOrdersIsShown(true);
+  }
+
+  const hideOrdersHandler = () => {
+    setOrdersIsShown(false);
+  }
+
   return (
     <CartProvider>
       {cartIsShown && <Cart onHideCart={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
+      {ordersIsShown && <Orders onHideOrders={hideOrdersHandler} />}
+      <Header onShowCart={showCartHandler} onShowOrders={showOrdersHandler} />
       <main>
         <Meals />
       </main>
