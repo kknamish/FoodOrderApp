@@ -21,6 +21,51 @@ const Checkout = ( props ) => {
     const inputPinRef = useRef();
     const inputCityRef = useRef();
     const inputPhoneRef = useRef();
+
+    const nameChangeHandler = () => {
+        if(isBigger(inputNameRef.current.value)){
+            setIsFormDetailsValid((prevState) => ({
+                ...prevState,
+                name: true
+            }))
+        }
+    }
+
+    const streetChangeHandler = () => {
+        if(isStreet(inputStreetRef.current.value)){
+            setIsFormDetailsValid((prevState) => ({
+                ...prevState,
+                street: true
+            }))
+        }
+    }
+
+    const pinChangeHandler = () => {
+        if(isPinCode(inputPinRef.current.value)){
+            setIsFormDetailsValid((prevState) => ({
+                ...prevState,
+                pin: true
+            }))
+        }
+    }
+
+    const cityChangeHandler = () => {
+        if(isBigger(inputCityRef.current.value)){
+            setIsFormDetailsValid((prevState) => ({
+                ...prevState,
+                city: true
+            }))
+        }
+    }
+
+    const phoneChangeHandler = () => {
+        if(isPhoneNumber(inputPhoneRef.current.value)){
+            setIsFormDetailsValid((prevState) => ({
+                ...prevState,
+                phone: true
+            }))
+        }
+    }
     
     const orderHandler = (event) => {
         event.preventDefault();
@@ -67,47 +112,50 @@ const Checkout = ( props ) => {
   return (
     <form className={classes.form} onSubmit={orderHandler}>
         <div className={`${classes.control} ${isFormDetailsValid.name? '': classes.invalid}`}>
-            <label htmlFor='name'>Full Name{!isFormDetailsValid.name && <span className={classes['error-text']}><small>(*Please enter Min. 4 characters.)</small></span>}</label>
+            <label htmlFor='name'>Full Name{!isFormDetailsValid.name && <span className={classes['error-text']}><small>(*Please enter min. 4 characters.)</small></span>}</label>
             <input 
                 id='name' 
                 name='name'
                 ref={inputNameRef}
+                onChange={nameChangeHandler}
             />
-            {/* {!isFormDetailsValid.name && <p className={classes['error-text']}>*Please enter a Valid Full Name(Min. 4 characters).</p>} */}
         </div>
         <div className={`${classes.control} ${isFormDetailsValid.street? '': classes.invalid}`}>
-            <label htmlFor='street'>Street{!isFormDetailsValid.street && <span className={classes['error-text']}><small>(*Please enter Min. 10 characters.)</small></span>}</label>
+            <label htmlFor='street'>Street{!isFormDetailsValid.street && <span className={classes['error-text']}><small>(*Please enter min. 10 characters.)</small></span>}</label>
             <input 
                 id='street' 
                 name='street' 
                 ref={inputStreetRef}
+                onChange={streetChangeHandler}
             />
-            {/* {!isFormDetailsValid.street && <small className={classes['error-text']}>*Please enter a Valid Street(Min. 10 characters).</small>} */}
         </div>
         <div className={`${classes.control} ${isFormDetailsValid.city? '': classes.invalid}`}>
-            <label htmlFor='city'>City{!isFormDetailsValid.city && <small className={classes['error-text']}>(*Please enter Min. 4 characters.)</small>}</label>
+            <label htmlFor='city'>City{!isFormDetailsValid.city && <small className={classes['error-text']}>(*Please enter min. 4 characters.)</small>}</label>
             <input 
                 id='city' 
                 name='city' 
                 ref={inputCityRef}
+                onChange={cityChangeHandler}
             />
-            {/* {!isFormDetailsValid.city && <p className={classes['error-text']}>*Please enter a Valid City(Min. 4 characters).</p>} */}
         </div>
         <div className={`${classes.control} ${isFormDetailsValid.pin? '': classes.invalid}`}>
-            <label htmlFor='pin'>Postal Code{!isFormDetailsValid.pin && <small className={classes['error-text']}>(*Please enter a Valid 5 digit Postal Code.)</small>} </label>
+            <label htmlFor='pin'>Postal Code{!isFormDetailsValid.pin && <small className={classes['error-text']}>(*Please enter a 5 digit Postal Code.)</small>} </label>
             <input 
                 id='pin' 
                 name='pin' 
                 ref={inputPinRef}
+                maxLength={5}
+                onChange={pinChangeHandler}
             />
-            {/* {!isFormDetailsValid.pin && <p className={classes['error-text']}>*Please enter a Valid 5 digit Postal Code.</p>} */}
         </div>
         <div className={`${classes.control} ${isFormDetailsValid.phone? '': classes.invalid}`}>
-            <label htmlFor='phone'>Contact{!isFormDetailsValid.phone && <small className={classes['error-text']}>(*Please enter a Valid 10 digit Contact.)</small>} </label>
+            <label htmlFor='phone'>Contact{!isFormDetailsValid.phone && <small className={classes['error-text']}>(*Please enter a 10 digit Contact number.)</small>} </label>
             <input 
                 id='phone' 
                 name='phone'
                 ref={inputPhoneRef}
+                maxLength={10}
+                onChange={phoneChangeHandler}
             />
         </div>
         <div className={classes.actions}>

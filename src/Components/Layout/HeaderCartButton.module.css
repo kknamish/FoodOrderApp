@@ -13,7 +13,7 @@
     min-width: 50px; 
     max-width: 300px;
     float: right;
-    margin-left: 15px;
+    margin: 0px 8px;
   }
   
   .button:hover,
